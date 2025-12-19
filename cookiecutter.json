@@ -1,6 +1,6 @@
 {
-    "application": "Application name",
-    "project_slug": "project_name",
+    "application": "Package name",
+    "project_slug": "package_name",
     "component_description": "Component description",
     "project_author_name": "autor 1",
     "email": "{something@email}",
@@ -10,7 +10,7 @@
     "use_git": ["github", "gitlab"],
     "use_config_file": ["yes", "no"],
     "__prompts__": {
-        "application": "Type the name of the application",
+        "application": "Type the name of the package",
         "project_slug": "Type the component name for the project must be alphanumeric with an underscore as a separator, max size 50, following this pattern: ^['a-zA-Z0-9']+(?:[_]['a-zA-Z0-9']+)?$ .",
         "component_description": "Type a description for the project",
         "project_author_name": "User or team name",
