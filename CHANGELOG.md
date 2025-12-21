@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.0.4 (2025-12-21)
+
+### Bug Fixes
+
+- Update dependencie pydantic-settings
+  ([`a5ce1a8`](https://github.com/AbelGRubio/package-scaffold/commit/a5ce1a8b7272c48c3e25b974fcbcf84995fa6d02))
+
+### Documentation
+
+- Change in readme
+  ([`d23ac98`](https://github.com/AbelGRubio/package-scaffold/commit/d23ac987f39add75f064737f5af1e58e4cb3386d))
+
+
 ## v1.0.3 (2025-12-21)
 
 ### Bug Fixes
