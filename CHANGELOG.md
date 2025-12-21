@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.5 (2025-12-21)
+
+### Bug Fixes
+
+- Change package scaffold configuracion
+  ([`8690ffa`](https://github.com/AbelGRubio/package-scaffold/commit/8690ffa8016b234c173aed7faf5975136c26e1d9))
+
+
 ## v1.0.4 (2025-12-21)
 
 ### Bug Fixes
