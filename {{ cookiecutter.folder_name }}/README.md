@@ -163,3 +163,8 @@ Uses `deptry` to detect dependencies in `src/` that are not used.
   - Documentation → `docs/source/` → `docs/build/html/`
   - Distribution → `dist/`
 
+
+**Contributing Guidelines:**
+- Review our [Style Guide](styleguide.md) to ensure clear and descriptive commit messages and consistent coding standards.
+- See our [Contribution Guidelines](CONTRIBUTING.md) for details on the workflow and submission process.
+- Please abide by our [Code of Conduct](CODE_OF_CONDUCT.md) to help maintain a welcoming and collaborative community.
