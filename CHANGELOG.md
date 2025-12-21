@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.3 (2025-12-21)
+
+### Bug Fixes
+
+- Update readme
+  ([`072dad7`](https://github.com/AbelGRubio/package-scaffold/commit/072dad7bc5b087deddb034cbdbf35e1da959616d))
+
+
 ## v1.0.2 (2025-12-21)
 
 ### Bug Fixes
