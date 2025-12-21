@@ -1,10 +1,18 @@
-{% raw %}name: Semantic Release
+name: Semantic Release
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_call:
     secrets:
       PR_TOKEN_USER:
         required: false
+
+permissions:
+  contents: write
+  packages: write
 
 jobs:
   release:
@@ -51,7 +59,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.14"
 
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -64,5 +72,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: uv run semantic-release publish
-{% endraw %}
+        run: uv run semantic-release version
