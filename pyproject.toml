@@ -1,5 +1,5 @@
 [project]
-name = "mcp-server-scaffold"
+name = "package-scaffold"
 version = "1.0.0"
 description = "A secure MCP (Model Context Protocol) authentication server with JWT validation against OpenID Connect providers such as Keycloak, Authentik, Logto, and Cognito."
 readme = "README.md"
@@ -145,21 +145,6 @@ tag_commit = "true"
 changelog_file="CHANGELOG.md"
 build_command = "uv build"
 version_variables = ["pyproject.toml:version"]
-
-
-[tool.semantic_release.remote]
-type = "gitlab"
-token = {env="GITLAB_CICD_TOKEN"}
-repository = "https://gitlab.agrubio.dev/packages/mcp-auth.git"
-domain = "https://gitlab.agrubio.dev"
-
-[tool.semantic_release.publish]
-dist_glob_patterns = ["dist/*"]
-upload_to_vcs_release = true
-upload_to_pypi = false
-repository_url = "https://gitlab.agrubio.dev/api/v4/projects/55/packages/pypi"
-build_command = "uv build"
-command = "python -m twine upload --repository-url https://gitlab.agrubio.dev/api/v4/projects/55/packages/pypi dist/* -u __token__ -p $$GITLAB_CICD_TOKEN"
 
 
 [tool.flake8]
