@@ -46,14 +46,6 @@ class Settings(BaseSettings):
         """Actualiza los atributos desde el archivo .cfg si no fueron seteados por entorno."""
         section = "conf"
 
-        # CORS_ORIGINS
-        if "cors_origins" in parser[section]:
-            cors_str = parser[section]["cors_origins"].strip()
-            if cors_str:
-                self.cors_origins = [
-                    origin.strip() for origin in cors_str.split(",") if origin.strip()
-                ]
-
         # Puedes añadir más campos aquí según necesites
         if "basic" in parser[section]:
             self.basic = parser[section]["basic"]

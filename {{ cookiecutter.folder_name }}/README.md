@@ -12,14 +12,12 @@ Python: {{cookiecutter.python_version}}
 
 ## Tools and Frameworks
 
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B)
 ![uv](https://img.shields.io/badge/uv-4baaaa?style=for-the-badge&logo=github)
 ![Ruff](https://img.shields.io/badge/Ruff-000000?style=for-the-badge&logo=ruff&logoColor=white)
 ![Pyright](https://img.shields.io/badge/Pyright-61DAFB?style=for-the-badge&logo=pyright&logoColor=white)
 ![Pytest](https://img.shields.io/badge/Pytest-0A9DFF?style=for-the-badge&logo=pytest&logoColor=white)
 ![Pre-commit](https://img.shields.io/badge/Pre--commit-FDA50F?style=for-the-badge&logo=pre-commit&logoColor=white)
-
 
 ## Description
 
@@ -32,6 +30,53 @@ This project template is designed for Python development using `uv` as the main 
 - Build and release automation using `uv` and `semantic-release`
 
 The project is structured to be easily run, tested, and deployed via the provided `Makefile`.
+
+---
+
+## CLI Usage
+
+This project includes a unified **CLI** (command-line interface) built with **Typer**.
+
+### Installation (editable mode for development)
+
+To use the CLI commands directly (e.g., `hello`, `mycli`, etc.) without typing `python` every time, install the package in editable mode using `uv`:
+
+```bash
+uv pip install -e .
+```
+
+This will make the entry points defined in `[project.scripts]` (e.g., `hello`) available in your terminal.
+
+> **Note**: If you are inside an activated virtual environment (`.venv`), the command will be installed only in that environment.
+
+### Available commands
+
+Once installed, you can run:
+
+```bash
+{{cookiecutter.package_name}} --help
+```
+
+This will show all available commands, such as:
+
+- `{{cookiecutter.package_name}} hello` → Prints a greeting
+- `{{cookiecutter.package_name}} goodbye` → Prints a farewell
+- `{{cookiecutter.package_name}} --help` → Shows this help
+
+> The exact name of the main command (`{{cookiecutter.package_name}}`, `mycli`, etc.) depends on what you configured in `[project.scripts]` in your `pyproject.toml`.
+
+### Example
+
+```bash
+{{cookiecutter.package_name}} hello
+# → Hello from {{ cookiecutter.project_slug }}
+
+{{cookiecutter.package_name}} goodbye
+# → Goodbye from {{ cookiecutter.project_slug }}
+
+{{cookiecutter.package_name}} --help
+# → Shows all available commands and options
+```
 
 ---
 
@@ -50,7 +95,10 @@ Before starting, make sure you have:
 
 Create and activate the virtual environment:
 
-`bash python -m venv .venv source ./setup.sh   # Activates the environment and syncs dependencies `
+```bash
+python -m venv .venv
+source ./setup.sh   # Activates the environment and syncs dependencies
+```
 
 > ⚠️ The Makefile will check that the correct virtual environment is active before running most commands.
 
@@ -60,7 +108,9 @@ Create and activate the virtual environment:
 
 Open a shell with `.venv` activated:
 
-`bash make venv `
+```bash
+make venv
+```
 
 All commands run inside this shell will use the correct dependencies.
 
@@ -70,7 +120,9 @@ All commands run inside this shell will use the correct dependencies.
 
 Run pre-commit hooks and check code quality:
 
-`bash make qa `
+```bash
+make qa
+```
 
 This will:
 
@@ -83,7 +135,9 @@ This will:
 
 To build the package:
 
-`bash make build `
+```bash
+make build
+```
 
 This will generate artifacts in the `dist/` folder.
 
@@ -93,7 +147,9 @@ This will generate artifacts in the `dist/` folder.
 
 Update `uv` locks and pre-commit hooks:
 
-`bash make update `
+```bash
+make update
+```
 
 It will:
 
@@ -107,7 +163,9 @@ It will:
 
 Execute unit tests:
 
-`bash make test `
+```bash
+make test
+```
 
 Features included:
 
@@ -122,11 +180,15 @@ Features included:
 
 Generate RST files:
 
-`bash make rst `
+```bash
+make rst
+```
 
 Build HTML documentation:
 
-`bash make docs1 `
+```bash
+make docs1
+```
 
 ---
 
@@ -134,21 +196,30 @@ Build HTML documentation:
 
 For semantic versioning:
 
-`bash make semantic-release `
+```bash
+make semantic-release
+```
 
 To publish the package (e.g., PyPI):
 
-`bash make publish `
+```bash
+make publish
+```
 
 For GitLab CI pipelines:
 
-`bash make semantic-release-gitlab make publish-gitlab `
+```bash
+make semantic-release-gitlab
+make publish-gitlab
+```
 
 ---
 
 ## 9. Detect unused packages
 
-`bash make unused-packages `
+```bash
+make unused-packages
+```
 
 Uses `deptry` to detect dependencies in `src/` that are not used.
 
@@ -162,7 +233,6 @@ Uses `deptry` to detect dependencies in `src/` that are not used.
   - Source code → `src/`
   - Documentation → `docs/source/` → `docs/build/html/`
   - Distribution → `dist/`
-
 
 **Contributing Guidelines:**
 - Review our [Style Guide](styleguide.md) to ensure clear and descriptive commit messages and consistent coding standards.
