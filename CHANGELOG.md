@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.0 (2025-12-23)
+
+### Features
+
+- Added cli package commands
+  ([`d109bf7`](https://github.com/AbelGRubio/package-scaffold/commit/d109bf7276ec72a211b36a027b6eba4b05602062))
+
+
 ## v1.0.5 (2025-12-21)
 
 ### Bug Fixes
