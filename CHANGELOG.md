@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-01-19)
+
+### Features
+
+- Added configuration in .vscode and project.toml
+  ([`b632b2d`](https://github.com/AbelGRubio/package-scaffold/commit/b632b2d6717f0551fae464cfb5664d34cf413545))
+
+
 ## v1.1.0 (2025-12-23)
 
 ### Features
