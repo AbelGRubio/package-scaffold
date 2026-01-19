@@ -1,3 +1,76 @@
 {
-  "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    // File Handling
+    // Automatically save files after a delay (default is 1000ms, adjustable via "files.autoSaveDelay")
+    "files.autoSave": "afterDelay",
+    // Remove trailing whitespace on save
+    "files.trimTrailingWhitespace": true,
+    // Ensure a newline at the end of files
+    "files.insertFinalNewline": true,
+    // Editor Configuration
+    // Format code on save
+    "editor.formatOnSave": true,
+    // Display a vertical ruler at 120 characters
+    "editor.rulers": [
+        120
+    ],
+    // Enforce spaces instead of tabs
+    "editor.insertSpaces": true,
+    // Set tab size to 4 spaces
+    "editor.tabSize": 4,
+    // Disable automatic indentation detection
+    "editor.detectIndentation": false,
+    "python.linting.enabled": true,
+    "python.linting.ruffEnabled": true,
+    "python.linting.ruffArgs": ["--fix"],
+    "psi-header.config": {
+        "forceToTop": true,
+        "spacesBetweenYears": false,
+        "license": "MIT",
+        "author": "{{ cookiecutter.project_author_name}}",
+        "initials": "{{ cookiecutter.project_author_name}}",
+        "authorEmail": "{{ cookiecutter.email}}",
+        "company": "{{ cookiecutter.project_author_name}}",
+        "copyrightHolder": "{{ cookiecutter.project_author_name}}",
+        "creationDateZero": "asIs",
+        "authoremail": "{{ cookiecutter.email}}",
+        "website": "https://your-website.com",
+        "projectName": "{{ cookiecutter.project_slug}}"
+    },
+    "psi-header.changes-tracking": {
+        "autoHeader": "autoSave",
+        "isActive": true,
+        "modDateFormat": "YYYY-MM-DD HH:mm:ss",
+        "modDate": "Last update",
+        "modBy": "Modified By",
+    },
+    "psi-header.lang-config": [
+        {
+            "language": "python",
+            "blankLinesAfter": 0,
+            "begin": "\"\"\"",
+            "commentMiddle": "",
+            "end": "\"\"\"",
+        }
+    ],
+    "psi-header.templates": [
+        {
+            "language": "python",
+            "template": [
+                "File title.",
+                "",
+                "========================================================================================================================",
+                "Name:         <<projectname>>/<<filename>>",
+                "Description:  Short file description.",
+                "Project:      {{ cookiecutter.project_slug}}",
+                "Author:       <<author>> (<<authoremail>>)",
+                "Date:         <<filecreated('YYYY-MM-DD HH:mm:ss')>>",
+                "Status:       Development",
+                "",
+                "Copyright ©<<year>> <<company>>. All rights reserved.",
+                "========================================================================================================================",
+            ]
+        }
+    ],
 }

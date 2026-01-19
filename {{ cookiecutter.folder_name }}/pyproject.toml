@@ -1,7 +1,7 @@
 [project]
 name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
-description = "A secure MCP (Model Context Protocol) authentication server with JWT validation against OpenID Connect providers such as Keycloak, Authentik, Logto, and Cognito."
+description = "{{ cookiecutter.component_description }}"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.14"
@@ -149,32 +149,30 @@ upload_to_repository = true
 tag_commit = "true"
 changelog_file="CHANGELOG.md"
 build_command = "uv build"
-version_variables = ["src/mcp_auth/__init__.py:__version__", "pyproject.toml:version"]
+version_variables = ["pyproject.toml:version"]
 
 
 [tool.semantic_release.remote]
 type = "gitlab"
 token = {env="GITLAB_CICD_TOKEN"}
-repository = "https://gitlab.agrubio.dev/packages/mcp-auth.git"
-domain = "https://gitlab.agrubio.dev"
+
 
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
 upload_to_pypi = false
-repository_url = "https://gitlab.agrubio.dev/api/v4/projects/55/packages/pypi"
 build_command = "uv build"
-command = "python -m twine upload --repository-url https://gitlab.agrubio.dev/api/v4/projects/55/packages/pypi dist/* -u __token__ -p $$GITLAB_CICD_TOKEN"
 
 
-[tool.flake8]
-max-line-length = 79
-ignore = ["E203", "W503"]
-exclude = [".venv", "./docs"]
+[tool.coverage.run]
+omit = [
+    "src/__main__.py",
+]
 
-[tool.black]
-line-length = 79
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{ cookiecutter.project_slug }}"]
 
-[tool.isort]
-profile = "black"
-line_length = 79
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
